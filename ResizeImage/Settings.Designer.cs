@@ -58,5 +58,14 @@ namespace Granikos.ResizeImage.Properties {
                 return ((int)(this["TopMargin"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OutputToCmd {
+            get {
+                return ((bool)(this["OutputToCmd"]));
+            }
+        }
     }
 }

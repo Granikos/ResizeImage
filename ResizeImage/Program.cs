@@ -35,8 +35,12 @@ namespace Granikos.ResizeImage
         {
             try
             {
-                Console.Write(file);
-                Console.Write("...");
+                if (Settings.Default.OutputToCmd)
+                {
+                    // Write to console, if requested
+                    Console.Write(file);
+                    Console.Write("...");
+                }
                 Image image = Image.FromFile(file);
                 int width = Settings.Default.OutputSize.Width;
                 Size outputSize = Settings.Default.OutputSize;
@@ -62,24 +66,32 @@ namespace Granikos.ResizeImage
                     ImageCodecInfo imageCodecInfo = ((IEnumerable<ImageCodecInfo>)ImageCodecInfo.GetImageEncoders()).FirstOrDefault<ImageCodecInfo>((ImageCodecInfo t) => t.MimeType == "image/jpeg");
                     bitmap.Save(str, imageCodecInfo, encoderParameter);
                 }
-                ConsoleColor foregroundColor = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("OK");
-                Console.ForegroundColor = foregroundColor;
+                if (Settings.Default.OutputToCmd)
+                {
+                    // Write to console, if requested
+                    ConsoleColor foregroundColor = Console.ForegroundColor;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("OK");
+                    Console.ForegroundColor = foregroundColor;
+                }
             }
             catch (Exception exception1)
             {
                 Exception exception = exception1;
-                ConsoleColor consoleColor = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Error.WriteLine(string.Concat("Error: ", exception.Message));
-                Console.ForegroundColor = consoleColor;
+                if (Settings.Default.OutputToCmd)
+                {
+                    // Write to console, if requested
+                    ConsoleColor consoleColor = Console.ForegroundColor;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Error.WriteLine(string.Concat("Error: ", exception.Message));
+                    Console.ForegroundColor = consoleColor;
+                }
             }
         }
 
         private static void Main(string[] args)
         {
-            IEnumerable<string> strs;
+            IEnumerable<string> argStrings;
             Program._foreColor = Console.ForegroundColor;
             string str = args.FirstOrDefault<string>();
             string str1 = args.Skip<string>(1).FirstOrDefault<string>();
@@ -106,7 +118,7 @@ namespace Granikos.ResizeImage
             }
             if (args.Count<string>() > 2)
             {
-                strs =
+                argStrings =
                     from s in args.Skip<string>(2).Distinct<string>(StringComparer.InvariantCultureIgnoreCase)
                     from s2 in s.Split(new char[] { ',', ' ', ';' }, StringSplitOptions.RemoveEmptyEntries)
                     let m = Program.RegexExtension.Match(s2.Trim())
@@ -117,13 +129,13 @@ namespace Granikos.ResizeImage
             {
                 string defaultImageTypes = Settings.Default.DefaultImageTypes;
                 char[] chrArray = new char[] { ',' };
-                strs =
+                argStrings =
                     from s in defaultImageTypes.Split(chrArray)
                     let m = Program.RegexExtension.Match(s.Trim())
                     where m.Success
                     select string.Concat(".", m.Value);
             }
-            IEnumerable<string> strs1 = strs;
+            IEnumerable<string> strs1 = argStrings;
             foreach (string str2 in (
                 from f in Directory.GetFiles(str)
                 from ext in strs1
@@ -140,11 +152,11 @@ namespace Granikos.ResizeImage
             Console.WriteLine("Resize Image");
             Console.WriteLine("(c) 2017 Granikos GmbH 6 Co. KG");
             Console.WriteLine();
-            Console.WriteLine("ResizeImage.exe SOURCE TARGET [EXT] [EXT] [EXT]...");
+            Console.WriteLine("ResizeImage.exe SOURCE TARGET [EXT] [EXT] [EXT] ...");
             Console.WriteLine();
-            Console.WriteLine("  SOURCE\t Source directory for original images");
-            Console.WriteLine("  TARGET\t Target directory for resized images");
-            Console.WriteLine("  EXT\t\t Image file extensions to process");
+            Console.WriteLine("SOURCE\t Source directory for original images");
+            Console.WriteLine("TARGET\t Target directory for resized images");
+            Console.WriteLine("EXT\t\t Image file extensions to process");
         }
     }
 }

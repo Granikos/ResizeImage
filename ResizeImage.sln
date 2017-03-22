@@ -9,6 +9,7 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Description = Resize images
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{51B913AF-EDB0-4E03-BDE4-E8096DA7B3C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
