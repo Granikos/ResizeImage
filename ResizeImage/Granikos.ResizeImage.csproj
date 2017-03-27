@@ -92,7 +92,6 @@
       <CustomToolNamespace>Granikos.ResizeImage.Properties</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="ResizeImage.licenseheader" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
