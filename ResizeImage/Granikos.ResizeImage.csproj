@@ -76,8 +76,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
-    <Content Include="DemoImages\Headshot_rectangle.jpg" />
-    <Content Include="DemoImages\Headshot_square.jpg" />
+    <Content Include="DemoConfig\AD\USERA_rectangle.jpg" />
+    <Content Include="DemoConfig\AD\USERA_square.jpg" />
+    <Content Include="DemoConfig\EXCHANGE\USERA_rectangle.jpg" />
+    <Content Include="DemoConfig\EXCHANGE\USERA_square.jpg" />
+    <Content Include="DemoConfig\INTRANET\USERA_rectangle.jpg" />
+    <Content Include="DemoConfig\INTRANET\USERA_square.jpg" />
+    <Content Include="DemoConfig\SOURCE\USERA_rectangle.jpg" />
+    <Content Include="DemoConfig\SOURCE\USERA_square.jpg" />
+    <None Include="DemoConfig\AD\ResizeImage.exe.config" />
+    <None Include="DemoConfig\EXCHANGE\ResizeImage.exe.config" />
+    <None Include="DemoConfig\INTRANET\ResizeImage.exe.config" />
     <None Include="Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>Granikos.ResizeImage.Properties</CustomToolNamespace>
@@ -97,6 +106,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
