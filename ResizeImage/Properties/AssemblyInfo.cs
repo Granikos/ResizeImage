@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Granikos GmbH & Co. KG")]
 [assembly: AssemblyProduct("Resize Image Tool")]
-[assembly: AssemblyCopyright("Copyright ©  2017 | Published under MIT")]
+[assembly: AssemblyCopyright("Copyright ©  2017 | Published under MIT license")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]

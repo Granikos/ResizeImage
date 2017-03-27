@@ -8,7 +8,7 @@ More information is provided in the Wiki accessible here: https://github.com/Gra
 
 Feel free to clone the solution.
 
-Found any issues? PLease open an new issue: https://github.com/Granikos/ResizeImage/issues
+Found any issues? Please open an new issue: https://github.com/Granikos/ResizeImage/issues
 
 ## Credits
 Written by: Thomas Stensitzki
