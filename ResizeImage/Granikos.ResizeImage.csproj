@@ -76,6 +76,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
+    <Content Include="DemoImages\Headshot_rectangle.jpg" />
+    <Content Include="DemoImages\Headshot_square.jpg" />
     <None Include="Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>Granikos.ResizeImage.Properties</CustomToolNamespace>
