@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("ResizeImage")]
-[assembly: AssemblyDescription("Tool to resize images. See http://scripts.granikos.eu for more details.")]
+[assembly: AssemblyDescription("Tool to resize images. See http://scripts.granikos.eu for more details")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Granikos GmbH & Co. KG")]
 [assembly: AssemblyProduct("Resize Image Tool")]
